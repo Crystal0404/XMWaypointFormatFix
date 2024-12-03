@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "xmwff",
+	"version": "${version}",
+	"name": "XMWaypointFormatFix",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Crystal0404"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/xmwff/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"crystal0404.xmwff.XMWaypointFormatFix"
+		]
+	},
+	"mixins": [
+		"xmwff.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
