@@ -3,7 +3,7 @@
 	"id": "xmwff",
 	"version": "${version}",
 	"name": "XMWaypointFormatFix",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Fix the wrong format of Xaeros Minimap waypoint sharing.",
 	"authors": [
 		"Crystal0404"
 	],
@@ -11,11 +11,11 @@
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
-	"license": "CC0-1.0",
+	"license": "LGPL-3.0-only",
 	"icon": "assets/xmwff/icon.png",
-	"environment": "*",
+	"environment": "client",
 	"entrypoints": {
-		"main": [
+		"client": [
 			"crystal0404.xmwff.XMWaypointFormatFix"
 		]
 	},
@@ -23,8 +23,8 @@
 		"xmwff.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.9",
-		"minecraft": "~1.21.1",
+		"fabricloader": ">=0.14.25",
+		"xaerominimap": ">=24.6.1",
 		"java": ">=21",
 		"fabric-api": "*"
 	}
