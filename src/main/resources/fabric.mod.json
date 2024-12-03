@@ -8,8 +8,8 @@
 		"Crystal0404"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/Crystal0404/XMWaypointFormatFix",
+		"sources": "https://github.com/Crystal0404/XMWaypointFormatFix"
 	},
 	"license": "LGPL-3.0-only",
 	"icon": "assets/xmwff/icon.png",
