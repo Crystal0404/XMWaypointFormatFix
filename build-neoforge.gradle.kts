@@ -73,7 +73,7 @@ configurations {
 tasks.processResources {
     val modId = project.property("mod_id")
     val modName = project.property("mod_name")
-    val modVersion = "${getModVersion()}+mc${project.property("minecraft_version")}"
+    val modVersion = getModVersion()
 
     inputs.property("id", modId)
     inputs.property("name", modName)
