@@ -1,4 +1,4 @@
-package crystal0404.xmwff.mixin;
+package com.github.crystal0404.mods.xmwff.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

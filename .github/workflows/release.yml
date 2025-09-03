@@ -1,0 +1,63 @@
+name: release
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Your release tag'
+        required: true
+  release:
+    types:
+      - published
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: get tag
+        id: get_tag
+        run: |
+          if [ '${{ github.event_name }}' == 'release' ]; then
+            echo 'tag=${{ github.event.release.tag_name }}' >> $GITHUB_OUTPUT
+          else
+            echo 'tag=${{ github.event.inputs.tag }}' >> $GITHUB_OUTPUT
+          fi
+      - name: get release info
+        id: release_info
+        uses: cardinalby/git-get-release-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag: ${{ steps.get_tag.outputs.tag }}
+      - name: checkout repository
+        uses: actions/checkout@v4
+      - name: validate gradle wrapper
+        uses: gradle/actions/wrapper-validation@v4
+      - name: setup jdk
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'microsoft'
+      - name: cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+      - name: make gradle wrapper executable
+        run: chmod +x ./gradlew
+
+      - name: build
+        run: ./gradlew build
+        env:
+          BUILD_RELEASE: 'true'
+          CHANGELOG: ${{ steps.release_info.outputs.body }}
+      - name: publish to github
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.get_tag.outputs.tag }}
+          files: versions/**/build/libs/*[!sources][!shadow].jar

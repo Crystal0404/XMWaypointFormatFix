@@ -1,11 +1,14 @@
 {
-	"required": true,
-	"package": "crystal0404.xmwff.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"client": [
-		"WaypointSharingHandlerMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	}
+  "required": true,
+  "package": "com.github.crystal0404.mods.xmwff.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "WaypointSharingHandlerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
 }

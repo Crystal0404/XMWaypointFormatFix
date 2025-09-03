@@ -1,0 +1,31 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "LGPL-3.0-only"
+issueTrackerURL = "https://github.com/Crystal0404/XMWaypointFormatFix/issues"
+
+[[mods]]
+modId = "${id}"
+version = "${version}"
+displayName = "${name}"
+logoFile = "assets/xmwff/icon.png"
+authors = "Crystal0404"
+description = '''
+Fix the wrong format of Xaeros Minimap waypoint sharing.
+'''
+
+[[dependencies.${id}]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${id}]]
+modId = "xaerominimap"
+type = "required"
+versionRange = "[24.6.1,)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[mixins]]
+config="xmwff.mixins.json"

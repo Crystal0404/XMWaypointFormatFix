@@ -1,31 +1,30 @@
 {
-	"schemaVersion": 1,
-	"id": "xmwff",
-	"version": "${version}",
-	"name": "XMWaypointFormatFix",
-	"description": "Fix the wrong format of Xaeros Minimap waypoint sharing.",
-	"authors": [
-		"Crystal0404"
-	],
-	"contact": {
-		"homepage": "https://github.com/Crystal0404/XMWaypointFormatFix",
-		"sources": "https://github.com/Crystal0404/XMWaypointFormatFix"
-	},
-	"license": "LGPL-3.0-only",
-	"icon": "assets/xmwff/icon.png",
-	"environment": "client",
-	"entrypoints": {
-		"client": [
-			"crystal0404.xmwff.XMWaypointFormatFix"
-		]
-	},
-	"mixins": [
-		"xmwff.mixins.json"
-	],
-	"depends": {
-		"fabricloader": ">=0.14.25",
-		"xaerominimap": ">=24.6.1",
-		"java": ">=21",
-		"fabric-api": "*"
-	}
+  "schemaVersion": 1,
+  "id": "${id}",
+  "version": "${version}",
+  "name": "${name}",
+  "description": "Fix the wrong format of Xaeros Minimap waypoint sharing.",
+  "authors": [
+    "Crystal0404"
+  ],
+  "contact": {
+    "issues": "https://github.com/Crystal0404/XMWaypointFormatFix/issues",
+    "sources": "https://github.com/Crystal0404/XMWaypointFormatFix"
+  },
+  "license": "LGPL-3.0-only",
+  "icon": "assets/xmwff/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.github.crystal0404.mods.xmwff.XMWaypointFormatFixMod"
+    ]
+  },
+  "mixins": [
+    "xmwff.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "xaerominimap": ">=24.6.1",
+    "java": ">=21"
+  }
 }
