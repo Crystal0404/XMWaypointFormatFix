@@ -34,3 +34,7 @@ This is a client-side-only mod, supporting Fabric, Quilt, and NeoForge.
 
 - neoforge `[21.0,)`
 - xaerominimap `[24.6.1,)`
+
+## Bug Report
+
+If anything doesn't work, please open an issue.
